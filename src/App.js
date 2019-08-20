@@ -1,6 +1,20 @@
 import React from 'react';
+import { createStore } from 'redux'
+
+import dndApp from './redux/reducers'
+
 import logo from './logo.svg';
 import './App.css';
+import { addNPC } from './redux/actions';
+import NpcListController from './components/NpcListController';
+
+// const store = createStore(dndApp)
+
+// console.log(store.getState())
+// const unsubscribe = store.subscribe(() => console.log(store.getState()))
+// store.dispatch(addNPC('Bob'))
+// store.dispatch(addNPC('Scanlan'))
+// unsubscribe()
 
 function App() {
   return (
@@ -18,6 +32,7 @@ function App() {
         >
           Learn React
         </a>
+        <NpcListController />
       </header>
     </div>
   );
