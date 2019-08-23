@@ -1,4 +1,4 @@
-import combinReducers, { combineReducers } from 'redux'
+import { combineReducers } from 'redux'
 
 import { ADD_NPC } from './actions'
 
