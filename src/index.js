@@ -1,13 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
-import npcApp from './redux/reducers'
-import  { createStore } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import { createLogger } from 'redux-logger'
+import  { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 
-const store = createStore(npcApp)
+import dndApp from './redux/reducers'
+import { fetchSpellReference } from './redux/actions';
+
+import './index.css';
+import App from './App';
+
+
+const loggerMiddleware = createLogger()
+
+const store = createStore(
+    dndApp,
+    applyMiddleware(
+        thunkMiddleware,
+        loggerMiddleware
+    )
+)
+
+//prepopulate
+store.dispatch(fetchSpellReference())
 
 ReactDOM.render(
     <Provider store={store}>

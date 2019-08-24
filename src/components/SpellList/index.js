@@ -5,7 +5,7 @@ import SpellCard from '../SpellCard'
 const SpellList = ({spells}) => (
     <div>
         {spells.map((spell, index) => (
-            <SpellCard {...spell} />
+            <SpellCard key={index} {...spell} />
             ))}
     </div>
 )
