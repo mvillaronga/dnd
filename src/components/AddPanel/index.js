@@ -6,6 +6,7 @@ import { addNPC } from '../../redux/actions'
 const AddPanel = () => {
     const inputName = useRef()
     const dispatch = useDispatch()
+    
     const onButtonClick = () => {
          console.log('Input', )
          dispatch(addNPC(inputName.current.value))
