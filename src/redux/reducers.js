@@ -14,7 +14,7 @@ const npcs = (state = tmpStore, action) => {
             return [
                         ...state,
                         {
-                            name: action.name
+                            ...action.npc
                         }
                     ]
         case TOGGLE_NPC:

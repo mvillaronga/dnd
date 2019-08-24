@@ -5,8 +5,11 @@ let nextNpcId = 2
 export const addNPC = (name) => {
     return {
         type: ADD_NPC, 
-        id: nextNpcId,
-        name
+        npc: {
+            id: nextNpcId++,
+            name,
+            selected: false
+        }
     }
 }
 

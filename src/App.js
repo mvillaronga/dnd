@@ -4,6 +4,7 @@ import React from 'react';
 import './App.css';
 
 import NpcListController from './components/Npc/NpcListController';
+import AddPanel from './components/AddPanel/index'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         >
           Learn React
         </a> */}
+        <AddPanel />
         <NpcListController />
       </header>
     </div>
