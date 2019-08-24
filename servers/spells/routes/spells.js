@@ -1,4 +1,4 @@
-var phb = require('../../data/spells/spells-phb.json')
+var phb = require('../../../data/spells/spells-phb.json')
 
 var express = require('express');
 var router = express.Router();
