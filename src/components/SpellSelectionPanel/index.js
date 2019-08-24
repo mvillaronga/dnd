@@ -7,10 +7,7 @@ import SpellList from '../SpellList'
 const SpellSelectionPanel = () => {
     
     const props = {
-        // spells: [
-        //     {name:"sample spell", level:"1"}
-        // ]
-        spells: useSelector(state => state.spells.spells.items)
+        spells: useSelector(state => state.refs.spells.items)
     }
 
     return (

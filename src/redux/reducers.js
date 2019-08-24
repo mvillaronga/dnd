@@ -56,7 +56,7 @@ const spellLoader = (state = {
     }
 }
 
-const spells = (state = {}, action) => {
+const refs = (state = {}, action) => {
     console.log('spellstate',state)
 
     switch (action.type) {
@@ -74,7 +74,7 @@ const spells = (state = {}, action) => {
 
 const dndApp = combineReducers({
     npcs,
-    spells
+    refs
 })
 
 export default dndApp;
