@@ -1,7 +1,7 @@
 export const ADD_NPC = 'ADD_CHARACTER'
 export const TOGGLE_NPC = 'TOGGLE_NPC'
 
-let nextNpcId = 2
+let nextNpcId = 0
 export const addNPC = (name) => {
     return {
         type: ADD_NPC, 

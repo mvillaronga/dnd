@@ -2,10 +2,12 @@ import { combineReducers } from 'redux'
 
 import { ADD_NPC, TOGGLE_NPC } from './actions'
 
-const tmpStore = [
-    {name: 'bopb', id: 0, selected: true}, 
-    {name: 'pike', id: 1, selected: false}
-]
+// const tmpStore = [
+//     {name: 'bopb', id: 0, selected: true}, 
+//     {name: 'pike', id: 1, selected: false}
+// ]
+
+const tmpStore = []
 
 const npcs = (state = tmpStore, action) => {
 // const npcs = (state = [], action) => {

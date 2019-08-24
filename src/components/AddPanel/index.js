@@ -14,8 +14,8 @@ const AddPanel = () => {
      }
 
     return <div>
-        New Npc Name 
-        <input type="text" ref={inputName} />
+        Npc &nbsp;
+        <input type="text" ref={inputName} /> &nbsp;
         <button onClick={onButtonClick}>Add</button>
     </div>
 }

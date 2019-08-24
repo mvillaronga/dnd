@@ -1,25 +1,22 @@
-import { connect } from 'react-redux'
-import NpcList from './NpcList'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import {toggleNPC} from '../../redux/actions'
 
-const mapStateToProps = state => {
-  return {
-    npcs: state.npcs
-  }
-}
+import NpcList from './NpcList'
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onNpcClick: id => {
+const NpcListController = () => {
+  const dispatch = useDispatch()
+
+  const props = {
+    npcs: useSelector(state => state.npcs),
+
+    onNpcClick: (id) => {
       dispatch(toggleNPC(id))
     }
   }
-}
 
-const NpcListController = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(NpcList)
+  return <NpcList {...props} />
+}
 
 export default NpcListController
