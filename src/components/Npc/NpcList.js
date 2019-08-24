@@ -5,7 +5,7 @@ import Npc from './Npc'
 const NpcList = ({ npcs, onNpcClick }) => (
   <ul>
     {npcs.map((npc, index) => (
-      <Npc key={index} {...npc} onClick={() => onNpcClick(index)} />
+      <Npc key={index} {...npc} onClick={() => onNpcClick(npc.id)} />
     ))}
   </ul>
 )
