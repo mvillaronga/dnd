@@ -1,10 +1,15 @@
 import { combineReducers } from 'redux'
 
-import { ADD_NPC } from './actions'
+import { ADD_NPC, TOGGLE_NPC } from './actions'
 
+const tmpStore = [
+    {name: 'bopb', id: 0, selected: true}, 
+    {name: 'pike', id: 1, selected: false}
+]
 
-const npcs = (state = [{name: 'bopb', id: 1}, {name: 'pike', id: 2}], action) => {
-    switch (action.type) {
+const npcs = (state = tmpStore, action) => {
+// const npcs = (state = [], action) => {
+        switch (action.type) {
         case ADD_NPC:
             return [
                         ...state,
@@ -12,6 +17,11 @@ const npcs = (state = [{name: 'bopb', id: 1}, {name: 'pike', id: 2}], action) =>
                             name: action.name
                         }
                     ]
+        case TOGGLE_NPC:
+            console.log('dispatched', action.id) 
+            return state.map(npc =>
+                npc.id === action.id ? { ...npc, selected: !npc.selected} : npc
+                )
         default:
             return state
     }

@@ -1,8 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Npc = ({ onClick, name }) => (
+const Npc = ({ onClick, name, selected }) => (
   <li
+    style={{
+      color: selected ? 'red' : 'blue'
+    }}
     onClick={onClick}
   >
     {name}
