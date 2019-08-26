@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
+import { Paper } from '@material-ui/core'
+
 import SpellFilter from '../SpellFilter'
 import SpellList from '../SpellList'
 
@@ -11,13 +13,11 @@ const SpellSelectionPanel = () => {
     }
 
     return (
-    <div>
+    <Paper>
         <h1>Spells</h1>
-        <hr />
         <SpellFilter />
-        <hr />
         <SpellList {...props} />
-    </div>
+    </Paper>
 )}
 
 export default SpellSelectionPanel
