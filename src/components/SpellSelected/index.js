@@ -1,9 +1,9 @@
 import React from 'react'
 
-const SpellSelected = ({spells}) => {
+const SpellSelected = ({selection}) => {
   return (
     <div>
-      {spells.map((spell) => spell.name).join()}
+      {selection.map((spell) => spell.name).join()}
     </div>
     )
 }

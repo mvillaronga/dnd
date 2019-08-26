@@ -2,7 +2,8 @@ import { combineReducers } from 'redux'
 
 import  { 
             ADD_NPC, TOGGLE_NPC,
-            REQUEST_SPELLS_REFERENCE, INVALIDATE_SPELLS_REFERENCE, RECEIVE_SPELLS_REFERENCE
+            REQUEST_SPELLS_REFERENCE, INVALIDATE_SPELLS_REFERENCE, RECEIVE_SPELLS_REFERENCE,
+            SELECT_SPELL, DESELECT_SPELL, CLEAR_SPELL_SELECTION
         } from './actions'
 
 const tmpStore = [1,2,3]
@@ -57,8 +58,6 @@ const spellLoader = (state = {
 }
 
 const refs = (state = {}, action) => {
-    console.log('spellstate',state)
-
     switch (action.type) {
         case INVALIDATE_SPELLS_REFERENCE:
         case RECEIVE_SPELLS_REFERENCE:
@@ -72,9 +71,32 @@ const refs = (state = {}, action) => {
       }
 }
 
+const selection = (state = {spells:[]}, action) => {
+    switch (action.type) {
+        case SELECT_SPELL:
+            return {
+                ...state,
+                spells: [...state.spells, action.spell]
+            }
+        case DESELECT_SPELL:
+            return {
+                ...state,
+                spells: [...state.spells.filter(item => item !== action.spell)]
+            }
+        case CLEAR_SPELL_SELECTION:
+            return {
+                ...state,
+                spells: []
+            }
+        default:
+            return state;
+    }
+}
+
 const dndApp = combineReducers({
     npcs,
-    refs
+    refs,
+    selection
 })
 
 export default dndApp;

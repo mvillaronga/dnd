@@ -8,7 +8,8 @@ import SpellSelected from '../SpellSelected'
 const SpellSelectionPanel = () => {
     
     const props = {
-        spells: useSelector(state => state.refs.spells.items)
+        spells: useSelector(state => state.refs.spells.items),
+        selection: useSelector(state => state.selection.spells)
     }
 
     return (
@@ -17,7 +18,7 @@ const SpellSelectionPanel = () => {
         <hr />
         <SpellFilter />
         <hr />
-        {/* <SpellSelected {...props} /> */}
+        <SpellSelected {...props} />
         <SpellList {...props} />
     </div>
 )}
