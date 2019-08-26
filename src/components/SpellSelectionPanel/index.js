@@ -1,15 +1,29 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+
+import {selectSpell, deselectSpell} from '../../redux/actions'
 
 import SpellFilter from '../SpellFilter'
 import SpellList from '../SpellList'
 import SpellSelected from '../SpellSelected'
 
 const SpellSelectionPanel = () => {
-    
+    const dispatch = useDispatch()
+
+    const selection = useSelector(state => state.selection.spells)
+    const spells = useSelector(state => state.refs.spells.items).filter(ele => !selection.includes(ele))
+
+    const onSpellSelected = (spell) => {
+        dispatch(selectSpell(spell))
+    }
+
+    const onSpellDeselected = (spell) => {
+        dispatch(deselectSpell(spell))
+    }
+
     const props = {
-        spells: useSelector(state => state.refs.spells.items),
-        selection: useSelector(state => state.selection.spells)
+        spells: spells,
+        selection: selection
     }
 
     return (
@@ -18,8 +32,8 @@ const SpellSelectionPanel = () => {
         <hr />
         <SpellFilter />
         <hr />
-        <SpellSelected {...props} />
-        <SpellList {...props} />
+        <SpellSelected {...props} onSpellDeselected={onSpellDeselected} />
+        <SpellList {...props} onSpellClicked={onSpellSelected} />
     </div>
 )}
 

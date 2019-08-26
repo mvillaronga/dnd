@@ -1,17 +1,9 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 
-import {selectSpell} from '../../redux/actions'
 
 import SpellCard from '../SpellCard'
 
-const SpellList = ({spells}) => {
-    const dispatch = useDispatch()
-    
-    const onSpellClicked = (spell) => {
-        dispatch(selectSpell(spell))
-    }
-
+const SpellList = ({spells, selection, onSpellClicked}) => {
     return (
         <div>
             {spells.map((spell, index) => (
