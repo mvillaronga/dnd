@@ -1,7 +1,8 @@
 import React from 'react'
 
-const SpellCard = ({name, level}) => {
-    return <div>
+const SpellCard = ({name, level, onClick}) => {
+
+    return <div onClick={onClick} >
         {name} - {level}
     </div>
 }
