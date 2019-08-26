@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 
 import SpellFilter from '../SpellFilter'
 import SpellList from '../SpellList'
+import SpellSelected from '../SpellSelected'
 
 const SpellSelectionPanel = () => {
     
@@ -16,6 +17,7 @@ const SpellSelectionPanel = () => {
         <hr />
         <SpellFilter />
         <hr />
+        {/* <SpellSelected {...props} /> */}
         <SpellList {...props} />
     </div>
 )}
