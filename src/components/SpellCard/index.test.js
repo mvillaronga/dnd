@@ -1,17 +1,14 @@
 import React from 'react';
-import SpellCard from '../SpellCard/index';
+import SpellCard from '../SpellCard';
 import renderer from 'react-test-renderer';
 import Adapter from 'enzyme-adapter-react-16';
 import { shallow, configure } from 'enzyme';
 
 configure({adapter: new Adapter()});
 
-const mockOnClick = jest.fn()
-
-
 test('Default Spell Card Rendering', () => {
     const component = renderer.create(
-      <SpellCard name="Some Sample Spell" level="1" onClick={() => mockOnClick} />,
+      <SpellCard name="Some Sample Spell" level="1" />,
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

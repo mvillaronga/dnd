@@ -2,8 +2,10 @@
 
 exports[`Default Spell Card Rendering 1`] = `
 <div>
-  Some Sample Spell
-   - 
-  1
+  Filter 
+  <input
+    onChange={[Function]}
+    type="text"
+  />
 </div>
 `;

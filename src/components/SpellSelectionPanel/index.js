@@ -37,7 +37,7 @@ const SpellSelectionPanel = () => {
         <SpellFilter />
         <hr />
         <SpellSelected {...props} onSpellDeselected={onSpellDeselected} onClearSelection={onClearSpellSelection} />
-        <SpellList {...props} onSpellClicked={onSpellSelected} />
+        <SpellList spells={props.spells} onSpellClicked={onSpellSelected} />
     </div>
 )}
 

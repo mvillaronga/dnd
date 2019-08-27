@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Default Spell Card Rendering 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    Clear Selection
+  </button>
+  <div>
+    <span
+      onClick={[Function]}
+    >
+      Test Spell 1
+      , 
+    </span>
+    <span
+      onClick={[Function]}
+    >
+      Test Spell 2
+      
+    </span>
+  </div>
+  <hr />
+</div>
+`;
