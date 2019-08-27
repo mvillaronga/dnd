@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Default Spell Card Rendering 1`] = `
-<div>
+<div
+  onClick={[Function]}
+>
   Some Sample Spell
    - 
   1
