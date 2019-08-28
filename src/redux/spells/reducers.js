@@ -1,6 +1,8 @@
 import * as type from './types'
 
-const selection = (state = {spells:[]}, action) => {
+export const initialState = {spells:[]}
+
+const selection = (state = initialState, action) => {
   switch (action.type) {
       case type.SELECT_SPELL:
           return {
