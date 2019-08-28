@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Npc component tests Default Spell Card Rendering 1`] = `
+<li
+  onClick={[MockFunction]}
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  Bobo
+</li>
+`;
