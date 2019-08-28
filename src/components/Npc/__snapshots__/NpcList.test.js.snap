@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NpcList component tests Default Spell Card Rendering 1`] = `
+<ul>
+  <li
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "blue",
+      }
+    }
+  >
+    bobo
+  </li>
+  <li
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+    william
+  </li>
+</ul>
+`;
