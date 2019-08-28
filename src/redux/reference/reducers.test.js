@@ -1,5 +1,5 @@
 import * as types from './types'
-import refs, { initialState, initialSpellState } from './reducers'
+import refs, { initialState, initialSpellState, spellLoader } from './reducers'
 
 describe('reference reducers', () => {
   it('should return the initial state', () => {
@@ -48,5 +48,12 @@ describe('reference reducers', () => {
       }
     })
   })
+})
 
+describe('Spell loader reducers', () => {
+  it('should return the initial state', () => {
+    expect(spellLoader(undefined, {})).toMatchObject(
+      initialSpellState
+    )
+  })
 })

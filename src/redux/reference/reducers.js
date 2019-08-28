@@ -6,7 +6,7 @@ export const initialSpellState = {
   items: []
 }
 
-const spellLoader = (state = initialSpellState, action) => {
+export const spellLoader = (state = initialSpellState, action) => {
   switch (action.type) {
     case type.REQUEST_SPELLS_REFERENCE:
       return {
