@@ -49,5 +49,12 @@
     "enzyme": "^3.10.0",
     "react-test-renderer": "^16.9.0"
   },
-  "proxy": "http://localhost:3001/"
+  "proxy": "http://localhost:3001/",
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/src/redux/reducers.js",
+      "serviceWorker.js"
+    ]
+  }
 }
