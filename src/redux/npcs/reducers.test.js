@@ -52,7 +52,8 @@ describe('npc reducers', () => {
     ).toEqual(
       [
         {
-          ...npc
+          ...npc, 
+          id: 5 
         }
       ]
     )
