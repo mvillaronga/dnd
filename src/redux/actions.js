@@ -1,8 +1,3 @@
-import { CLEAR } from "jest-util/build/specialChars";
-
-export const ADD_NPC = 'ADD_CHARACTER'
-export const TOGGLE_NPC = 'TOGGLE_NPC'
-
 export const REQUEST_SPELLS_REFERENCE = 'REQUEST_SPELLS_REFERENCE'
 export const INVALIDATE_SPELLS_REFERENCE = 'INVALIDATE_SPELLS_REFERENCE'
 export const RECEIVE_SPELLS_REFERENCE = 'RECEIVE_SPELLS_REFERENCE'
@@ -10,25 +5,6 @@ export const RECEIVE_SPELLS_REFERENCE = 'RECEIVE_SPELLS_REFERENCE'
 export const SELECT_SPELL = 'SELECT_SPELL'
 export const DESELECT_SPELL = 'DESELECT_SPELL'
 export const CLEAR_SPELL_SELECTION = 'CLEAR_SPELL_SELECTION'
-
-let nextNpcId = 0
-export const addNPC = (name) => {
-    return {
-        type: ADD_NPC, 
-        npc: {
-            id: nextNpcId++,
-            name,
-            selected: false
-        }
-    }
-}
-
-export const toggleNPC = (id) => {
-    return {
-        type: TOGGLE_NPC,
-        id: id
-    }
-}
 
 export const requestSpellReference = () => {
     return {

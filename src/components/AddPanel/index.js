@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { addNPC } from '../../redux/actions'
+import { addNPC } from '../../redux/npcs/actions'
 
 const AddPanel = () => {
     const inputName = useRef()

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import {toggleNPC} from '../../redux/actions'
+import {toggleNPC} from '../../redux/npcs/actions'
 
 import NpcList from './NpcList'
 
