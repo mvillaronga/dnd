@@ -26,9 +26,9 @@
     "start:all": "yarn concurrently \"yarn start\" \"yarn server:spells\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
-    "server:spells": "SET PORT=3001 & nodemon ./servers/server.spells",
-    "jest": "jest"
+    "server:spells": "SET PORT=3001 & nodemon ./servers/server.spells"
   },
   "eslintConfig": {
     "extends": "react-app"
