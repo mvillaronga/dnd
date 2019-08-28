@@ -27,7 +27,7 @@ describe('npc reducers', () => {
     ])
   })
 
-  it('should handle TOGGLE_NPC', () => {
+  it('should handle TOGGLE_NPC on', () => {
     expect(
       npcs([{ ...npc }], {
         type: types.TOGGLE_NPC,
@@ -37,9 +37,25 @@ describe('npc reducers', () => {
       [
         {
           ...npc,
-          selected: !npc.selected
+          selected: true
         }
       ]
     )
   })
+  
+  it('should ignore togglings NPCs not in the list', () => {
+    expect(
+      npcs([{ ...npc, id: 5 }], {
+        type: types.TOGGLE_NPC,
+        id: npc.id
+      })
+    ).toEqual(
+      [
+        {
+          ...npc
+        }
+      ]
+    )
+  })
+
 })
