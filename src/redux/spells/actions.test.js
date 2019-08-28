@@ -1,3 +1,4 @@
+import * as type from './types'
 import * as actions from './actions'
 
 describe('Spell Selection Actions', () => {
@@ -6,7 +7,7 @@ describe('Spell Selection Actions', () => {
 
   it('should select a spell', () => {
     const ea = {
-      type: actions.SELECT_SPELL,
+      type: type.SELECT_SPELL,
       spell: spell
     }
     expect(actions.selectSpell(spell)).toEqual(ea)
@@ -14,7 +15,7 @@ describe('Spell Selection Actions', () => {
 
   it('should deselect a spell', () => {
     const ea = {
-      type: actions.DESELECT_SPELL,
+      type: type.DESELECT_SPELL,
       spell: spell
     }
     expect(actions.deselectSpell(spell)).toEqual(ea)
@@ -22,7 +23,7 @@ describe('Spell Selection Actions', () => {
 
   it('Should deselect all spells', () => {
     const ea = {
-      type: actions.CLEAR_SPELL_SELECTION
+      type: type.CLEAR_SPELL_SELECTION
     }
     expect(actions.clearSpellSelection()).toEqual(ea)
   })

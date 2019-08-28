@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 
 import  { 
-            REQUEST_SPELLS_REFERENCE, INVALIDATE_SPELLS_REFERENCE, RECEIVE_SPELLS_REFERENCE,
-            SELECT_SPELL, DESELECT_SPELL, CLEAR_SPELL_SELECTION
+            REQUEST_SPELLS_REFERENCE, INVALIDATE_SPELLS_REFERENCE, RECEIVE_SPELLS_REFERENCE
         } from './actions'
 
 import npcs from './npcs/reducers'
+import selection from './spells/reducers'
 
 const spellLoader = (state = {
                     isFetching: false,
@@ -49,28 +49,6 @@ const refs = (state = {}, action) => {
         default:
           return state
       }
-}
-
-const selection = (state = {spells:[]}, action) => {
-    switch (action.type) {
-        case SELECT_SPELL:
-            return {
-                ...state,
-                spells: [...state.spells, action.spell]
-            }
-        case DESELECT_SPELL:
-            return {
-                ...state,
-                spells: [...state.spells.filter(item => item !== action.spell)]
-            }
-        case CLEAR_SPELL_SELECTION:
-            return {
-                ...state,
-                spells: []
-            }
-        default:
-            return state;
-    }
 }
 
 const dndApp = combineReducers({
