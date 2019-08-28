@@ -1,12 +1,12 @@
 import * as type from './types'
 
-export const initialState = {
+export const initialSpellState = {
   isFetching: false,
   didInvalidate: false,
   items: []
 }
 
-const spellLoader = (state = initialState, action) => {
+const spellLoader = (state = initialSpellState, action) => {
   switch (action.type) {
     case type.REQUEST_SPELLS_REFERENCE:
       return {
@@ -32,7 +32,9 @@ const spellLoader = (state = initialState, action) => {
   }
 }
 
-const refs = (state = {}, action) => {
+export const initialState = {spells: initialSpellState }
+
+const refs = (state = initialState, action) => {
   switch (action.type) {
     case type.INVALIDATE_SPELLS_REFERENCE:
     case type.RECEIVE_SPELLS_REFERENCE:
