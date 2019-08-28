@@ -6,12 +6,20 @@ import { shallow, configure } from 'enzyme';
 
 configure({adapter: new Adapter()});
 describe('Npc component tests', () => {
-  it('Default Spell Card Rendering', () => {
+  it('Default Npc Rendering', () => {
     const component = renderer.create(
-      <Npc name="Bobo" onClick={jest.fn()} selected="false" />,
+      <Npc name="Bobo" onClick={jest.fn()} selected={false} />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+
+  it('Selected Npc Rendering', () => {
+    const component = renderer.create(
+      <Npc name="Bobo" onClick={jest.fn()} selected={true} />,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
 
   it('On Click handler', () => {
     const onClick = jest.fn()
