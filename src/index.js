@@ -7,7 +7,7 @@ import  { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 
 import dndApp from './redux/reducers'
-import { fetchSpellReference } from './redux/actions';
+import { fetchSpellReference } from './redux/reference/actions';
 
 import './index.css';
 import App from './App';

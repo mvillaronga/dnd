@@ -1,8 +1,8 @@
 import { ADD_NPC, TOGGLE_NPC } from './types'
 
-const tmpStore = [1,2,3]
+export const initialState = [1, 2, 3]
 
-const npcs = (state = tmpStore, action) => {
+const npcs = (state = initialState, action) => {
     switch (action.type) {
     case ADD_NPC:
         return [
