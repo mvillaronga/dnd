@@ -1,11 +1,12 @@
 import * as type from './types'
 
-
-const spellLoader = (state = {
+export const initialState = {
   isFetching: false,
   didInvalidate: false,
   items: []
-}, action) => {
+}
+
+const spellLoader = (state = initialState, action) => {
   switch (action.type) {
     case type.REQUEST_SPELLS_REFERENCE:
       return {

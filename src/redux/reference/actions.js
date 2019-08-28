@@ -1,3 +1,4 @@
+import 'cross-fetch/polyfill'
 import * as type from './types'
 
 export const requestSpellReference = () => {
@@ -25,10 +26,7 @@ export const fetchSpellReference = () => {
 
       return fetch('/spells')
           .then(
-              response => {   
-                              console.log('response', response)
-                              return response.json() 
-                          },
+              response => response.json() ,
               error => console.log('An error occurred.', error)
           )
           .then(
