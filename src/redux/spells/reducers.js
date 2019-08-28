@@ -22,4 +22,4 @@ const selection = (state = {spells:[]}, action) => {
   }
 }
 
-default export selection
+export default selection
