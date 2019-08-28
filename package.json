@@ -54,7 +54,6 @@
   },
   "proxy": "http://localhost:3001/",
   "jest": {
-    "automock": false,
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "/src/redux/reducers.js",
