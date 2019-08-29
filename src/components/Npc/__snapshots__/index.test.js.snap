@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NpcListController tests should render the panel 1`] = `"<ul><li style=\\"color: blue;\\">gandalf</li><li style=\\"color: red;\\">frodo</li></ul>"`;
