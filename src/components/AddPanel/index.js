@@ -9,6 +9,7 @@ const AddPanel = () => {
     
     const onButtonClick = () => {
          console.log('Input', )
+         console.log('curValue', inputName.current.value)
          dispatch(addNPC(inputName.current.value))
          inputName.current.value = ''
          inputName.current.focus()

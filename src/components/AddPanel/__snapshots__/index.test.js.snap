@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddPanel tests should render the panel 1`] = `
+<div>
+  Npc  
+  <input
+    type="text"
+  />
+    
+  <button
+    onClick={[Function]}
+  >
+    Add
+  </button>
+</div>
+`;
