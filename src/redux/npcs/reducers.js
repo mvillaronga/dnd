@@ -12,7 +12,6 @@ const npcs = (state = initialState, action) => {
                     }
                 ]
     case TOGGLE_NPC:
-        console.log('dispatched', action.id) 
         return state.map(npc =>
             npc.id === action.id ? { ...npc, selected: !npc.selected} : npc
             )
