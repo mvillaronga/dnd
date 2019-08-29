@@ -1,9 +1,10 @@
 import React from 'react'
 
-const SpellSelected = ({selection, onSpellDeselected, onClearSelection}) => {
+const SpellSelected = ({selection, onSpellDeselected, onClearSelection, onGenerateList}) => {
   return (
     <div>
       {selection.length > 0 && <button onClick={() => onClearSelection()}>Clear Selection</button>}
+      {selection.length > 0 && <button onClick={() => onGenerateList()}>Generate Spell Cards</button>}
       <div>
         {selection.map((spell, idx) => 
           <span key={idx} onClick={() => onSpellDeselected(spell)}>

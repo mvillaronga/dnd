@@ -7,6 +7,11 @@ exports[`Default Spell Card Rendering 1`] = `
   >
     Clear Selection
   </button>
+  <button
+    onClick={[Function]}
+  >
+    Generate Spell Cards
+  </button>
   <div>
     <span
       onClick={[Function]}
