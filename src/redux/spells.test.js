@@ -2,7 +2,7 @@ import spellSlice,
       { 
         selectSpell, deselectSpell, clearSpellSelection,
         initialState
-      } from './slice'
+      } from './spells'
 
 const spell = {
   name: "Magic Missle",

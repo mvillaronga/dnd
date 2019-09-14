@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import Adapter from 'enzyme-adapter-react-16';
 import { configure, mount } from 'enzyme';
 
-import {selectSpell, deselectSpell, clearSpellSelection} from '../../redux/spells/slice'
+import {selectSpell, deselectSpell, clearSpellSelection} from '../../redux/spells'
 
 import SpellSelectionPanel from '../SpellSelectionPanel'
 
