@@ -1,7 +1,8 @@
-import { selectSpell, deselectSpell, clearSpellSelection } from './slice'
-import spellSlice from './slice'
-
-import { initialState } from './reducers'
+import spellSlice,
+      { 
+        selectSpell, deselectSpell, clearSpellSelection,
+        initialState
+      } from './slice'
 
 const spell = {
   name: "Magic Missle",
