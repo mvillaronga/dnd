@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NpcListController tests should render the panel 1`] = `"<div><h1>Spells</h1><hr><div>Filter&nbsp;<input type=\\"text\\"></div><hr><div><button>Clear Selection</button><button>Generate Spell Cards</button><div><span>friends</span></div><hr></div><div><div>magic missle - 1</div><div>find familliar - 1</div><div>fire bolt - 0</div></div></div>"`;
+exports[`SpellSelectionPanel tests should render the panel 1`] = `"<div><h1>Spells</h1><hr><div>Filter&nbsp;<input type=\\"text\\"></div><hr><div><button>Clear Selection</button><button>Generate Spell Cards</button><div><span>friends</span></div><hr></div><div><div>magic missle - 1</div><div>find familliar - 1</div><div>fire bolt - 0</div></div></div>"`;

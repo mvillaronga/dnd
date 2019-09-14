@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import {selectSpell, deselectSpell, clearSpellSelection} from '../../redux/spells/actions'
+import {selectSpell, deselectSpell, clearSpellSelection} from '../../redux/spells/slice'
 
 import SpellFilter from '../SpellFilter'
 import SpellList from '../SpellList'

@@ -5,6 +5,8 @@ import { Provider } from 'react-redux'
 import Adapter from 'enzyme-adapter-react-16';
 import { configure, mount } from 'enzyme';
 
+import {selectSpell, deselectSpell, clearSpellSelection} from '../../redux/spells/slice'
+
 import SpellSelectionPanel from '../SpellSelectionPanel'
 
 configure({ adapter: new Adapter() });
@@ -36,7 +38,7 @@ const wrapper = () => mount(
   </Provider>
 )
 
-describe('NpcListController tests', () => {
+describe('SpellSelectionPanel tests', () => {
 
   beforeEach(() => {
     store.clearActions();
@@ -52,7 +54,7 @@ describe('NpcListController tests', () => {
 
     comp.find('div').last().simulate('click')
     expect(store.getActions()).toEqual([
-      {"spell": {"level": "0", "name": "fire bolt"}, "type": "SELECT_SPELL"}
+      {"payload": {"level": "0", "name": "fire bolt"}, "type": selectSpell.type}
     ])
   })
 
@@ -60,13 +62,13 @@ describe('NpcListController tests', () => {
     const comp = wrapper()
 
     comp.find('span').first().simulate('click')
-    expect(store.getActions()).toEqual( [{"spell": {"level": "0", "name": "friends"}, "type": "DESELECT_SPELL"}])
+    expect(store.getActions()).toEqual( [{"payload": {"level": "0", "name": "friends"}, "type": deselectSpell.type}])
   })
 
   it('should clear all spells', () => {
     const comp = wrapper()
 
     comp.find('button').first().simulate('click')
-    expect(store.getActions()).toEqual([ { type: 'CLEAR_SPELL_SELECTION' } ])
+    expect(store.getActions()).toEqual([ { type: clearSpellSelection.type } ])
   })
 })
