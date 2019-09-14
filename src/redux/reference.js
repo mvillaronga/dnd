@@ -10,7 +10,7 @@ export const initialState = {
 }
 
 const referenceSlice = createSlice({
-  slice: "reference",
+  slice: "refs",
   initialState: initialState,
   reducers: {
     requestSpellReference: (state) => {state.spells.didInvalidate = true},
@@ -21,7 +21,7 @@ const referenceSlice = createSlice({
     receiveSpellReference: (state, action) => {
       state.spells.isFetching = false
       state.spells.didInvalidate = false
-      state.spells.items = action.payload.spells
+      state.spells.items = action.payload
       state.spells.lastModified = action.payload.receivedAt
     }
   }

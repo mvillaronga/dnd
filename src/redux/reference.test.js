@@ -42,16 +42,12 @@ describe('reference reducers', () => {
     const spellList = { name: "magic Missle", level: 1 }
 
     expect(referenceSlice.reducer(undefined,
-      receiveSpellReference({
-        spells: spellList,
-        receivedAt: ts
-      })
+      receiveSpellReference(spellList)
     )).toMatchObject({
       spells: {
         isFetching: false,
         didInvalidate: false,
         items: spellList,
-        lastModified: ts
       }
     })
   })

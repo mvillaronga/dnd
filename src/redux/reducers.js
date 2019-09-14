@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
 
 import npcs from './npcs/reducers'
-import refs from './reference/reducers'
+import referenceSlice from './reference'
 import spellSlice from './spells'
 
 const dndApp = combineReducers({
     npcs,
-    refs,
+    refs: referenceSlice.reducer,
     selection: spellSlice.reducer
 })
 

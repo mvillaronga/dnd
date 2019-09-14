@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { configureStore } from 'redux-starter-kit'
 
 import dndApp from './redux/reducers'
-import { fetchSpellReference } from './redux/reference/actions';
+import { fetchSpellReference } from './redux/reference';
 
 import './index.css';
 import App from './App';
