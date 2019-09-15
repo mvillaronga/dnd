@@ -20,6 +20,9 @@ const state = {
         {name: "magic missle", level:"1"},
       ]
     }
+  },
+  filter: {
+    name: ''
   }
 }
 

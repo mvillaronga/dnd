@@ -6,6 +6,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { configure, mount } from 'enzyme';
 
 import {selectSpell, deselectSpell, clearSpellSelection} from '../../redux/spells'
+import {filterChange} from '../../redux/filter'
 
 import SpellSelectionPanel from '../SpellSelectionPanel'
 
@@ -27,6 +28,9 @@ const state = {
         spell
       ]
     }
+  },
+  filter: {
+    name: ''
   }
 }
 
@@ -70,5 +74,13 @@ describe('SpellSelectionPanel tests', () => {
 
     comp.find('button').first().simulate('click')
     expect(store.getActions()).toEqual([ { type: clearSpellSelection.type } ])
+  })
+
+  it('should filter spells when the list changes', () => {
+    const comp = wrapper()
+    var ip = comp.find('input').first()
+    ip.getDOMNode().value = 'tmp_test'
+    ip.simulate('change')
+    expect(store.getActions()).toEqual([{type: filterChange.type, payload: 'tmp_test'}])
   })
 })

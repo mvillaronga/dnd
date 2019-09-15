@@ -7,6 +7,7 @@ import { configureStore } from 'redux-starter-kit'
 import npcSlice from './redux/npcs'
 import referenceSlice from './redux/reference'
 import spellSlice from './redux/spells'
+import filterSlice from './redux/filter'
 
 import { fetchSpellReference } from './redux/reference';
 
@@ -17,7 +18,8 @@ const store = configureStore({
     reducer: {
         npcs: npcSlice.reducer,
         refs: referenceSlice.reducer,
-        selection: spellSlice.reducer
+        selection: spellSlice.reducer,
+        filter: filterSlice.reducer
     }
 })
 

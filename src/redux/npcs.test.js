@@ -1,8 +1,3 @@
-// import * as types from './types'
-// import npcs from './reducers'
-
-// import { initialState } from './reducers'
-
 import npcSlice,
 {
   addNpc, toggleNpc,
