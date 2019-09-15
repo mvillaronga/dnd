@@ -1,16 +1,16 @@
 import React, { useRef } from 'react'
 
-const SpellFilter = () => {
+const SpellFilter = ({onFilterChange}) => {
     const entry = useRef()
 
-    const props = {
-
+    const onChange = () => {
+        onFilterChange(entry.current.value)
     }
 
     return (
         <div>
             Filter&nbsp;
-            <input type="text" ref={entry} {...props} />
+            <input type="text" ref={entry} onChange={onChange} />
         </div>
     )
 }

@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Default Spell Card Rendering 1`] = `
+exports[`Spell Filter tests should render properly 1`] = `
 <div>
   Filter 
   <input
+    onChange={[Function]}
     type="text"
   />
 </div>
