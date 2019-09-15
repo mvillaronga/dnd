@@ -4,7 +4,6 @@ exports[`Default Spell Card Rendering 1`] = `
 <div>
   Filter 
   <input
-    onChange={[Function]}
     type="text"
   />
 </div>

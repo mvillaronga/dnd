@@ -4,9 +4,7 @@ const SpellFilter = () => {
     const entry = useRef()
 
     const props = {
-        onChange: () => {
-            
-        }
+
     }
 
     return (

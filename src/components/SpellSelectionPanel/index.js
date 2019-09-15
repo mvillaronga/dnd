@@ -12,7 +12,6 @@ const SpellSelectionPanel = () => {
 
     const selection = useSelector(state => state.selection.spells)
     const refs = useSelector(state => state.refs)
-    console.log('refs', refs)
     const spells = useSelector(state => state.refs.spells.items).filter(ele => !selection.includes(ele))
 
     const onSpellSelected = (spell) => {
