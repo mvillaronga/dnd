@@ -6,6 +6,23 @@ exports[`Spell Filter tests should render properly 1`] = `
   <input
     onChange={[Function]}
     type="text"
+    value=""
   />
+</div>
+`;
+
+exports[`Spell Filter tests should render properly with a filter 1`] = `
+<div>
+  Filter 
+  <input
+    onChange={[Function]}
+    type="text"
+    value="set"
+  />
+  <button
+    onClick={[MockFunction]}
+  >
+    Clear
+  </button>
 </div>
 `;

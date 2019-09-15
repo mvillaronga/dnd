@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { selectSpell, deselectSpell, clearSpellSelection } from '../../redux/spells'
-import { filterChange } from '../../redux/filter'
+import { filterChange, filterClear } from '../../redux/filter'
 
 import SpellFilter from '../SpellFilter'
 import SpellList from '../SpellList'
@@ -33,6 +33,10 @@ const SpellSelectionPanel = () => {
         dispatch(filterChange(val))
     }
 
+    const onFilterClear = () => {
+        dispatch(filterClear())
+    }
+
     const props = {
         spells: spells,
         selection: selection
@@ -42,7 +46,7 @@ const SpellSelectionPanel = () => {
     <div>
         <h1>Spells</h1>
         <hr />
-        <SpellFilter onFilterChange={onFilterChange} />
+        <SpellFilter onFilterChange={onFilterChange} filter={filter} onFilterClear={onFilterClear} />
         <hr />
         <SpellSelected selection={props.selection} onSpellDeselected={onSpellDeselected} onClearSelection={onClearSpellSelection} />
         <SpellList spells={props.spells} onSpellClicked={onSpellSelected} />

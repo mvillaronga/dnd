@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-const SpellFilter = ({onFilterChange}) => {
+const SpellFilter = ({filter, onFilterChange, onFilterClear}) => {
     const entry = useRef()
 
     const onChange = () => {
@@ -10,7 +10,8 @@ const SpellFilter = ({onFilterChange}) => {
     return (
         <div>
             Filter&nbsp;
-            <input type="text" ref={entry} onChange={onChange} />
+            <input type="text" ref={entry} onChange={onChange} value={filter} />
+            {filter.length > 0 &&<button onClick={onFilterClear}>Clear</button>}
         </div>
     )
 }
