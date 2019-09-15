@@ -4,14 +4,21 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import { configureStore } from 'redux-starter-kit'
 
-import dndApp from './redux/reducers'
+import npcSlice from './redux/npcs'
+import referenceSlice from './redux/reference'
+import spellSlice from './redux/spells'
+
 import { fetchSpellReference } from './redux/reference';
 
 import './index.css';
 import App from './App';
 
 const store = configureStore({
-    reducer:    dndApp
+    reducer: {
+        npcs: npcSlice.reducer,
+        refs: referenceSlice.reducer,
+        selection: spellSlice.reducer
+    }
 })
 
 //prepopulate
