@@ -1,14 +1,14 @@
 import React, { useRef } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { addNPC } from '../../redux/npcs/actions'
+import { addNpc } from '../../redux/npcs'
 
 const AddPanel = () => {
     const inputName = useRef()
     const dispatch = useDispatch()
     
     const onButtonClick = () => {
-         dispatch(addNPC(inputName.current.value))
+         dispatch(addNpc(inputName.current.value))
          inputName.current.value = ''
          inputName.current.focus()
      }

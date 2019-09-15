@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import {toggleNPC} from '../../redux/npcs/actions'
+import { toggleNpc } from '../../redux/npcs'
 
 import NpcList from './NpcList'
 
@@ -12,7 +12,7 @@ const NpcListController = () => {
     npcs: useSelector(state => state.npcs),
 
     onNpcClick: (id) => {
-      dispatch(toggleNPC(id))
+      dispatch(toggleNpc(id))
     }
   }
 

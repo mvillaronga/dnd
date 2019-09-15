@@ -7,6 +7,8 @@ import { shallow, configure, mount } from 'enzyme';
 
 import AddPanel from '../AddPanel'
 
+import npcSlice from '../../redux/npcs'
+
 configure({ adapter: new Adapter() });
 
 const entered = 'Gandalf'
@@ -38,11 +40,11 @@ describe('AddPanel tests', () => {
 
     comp.find("input").getDOMNode().value = entered
     comp.find("button").first().simulate('click')
-    expect(store.getActions()).toEqual([
-      { 
-        type: 'ADD_CHARACTER',
-        npc: { id: 0, name: 'Gandalf', selected: false }} 
-    ])
+    expect(store.getActions()).toEqual([{ 
+        type: npcSlice.actions.addNpc.type,
+        payload: { id: 0, name: 'Gandalf', selected: false }
+      }]
+    )
     expect(comp.find("input").getDOMNode().value).toEqual('')
   })
 })

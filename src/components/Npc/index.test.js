@@ -8,6 +8,8 @@ import { configure, mount } from 'enzyme';
 import NpcListController from '../Npc'
 import Npc from './Npc'
 
+import { toggleNpc } from '../../redux/npcs'
+
 configure({ adapter: new Adapter() });
 
 let state = {
@@ -42,6 +44,6 @@ describe('NpcListController tests', () => {
     )
 
     comp.find(Npc).first().simulate('click')
-    expect(store.getActions()).toEqual([ { type: 'TOGGLE_NPC', id: 0 } ])
+    expect(store.getActions()).toEqual([ { type: toggleNpc.type, payload: 0 } ])
   })
 })
