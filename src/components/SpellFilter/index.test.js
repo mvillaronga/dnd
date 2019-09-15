@@ -3,7 +3,6 @@ import SpellFilter from '../SpellFilter';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure, mount } from 'enzyme';
 import renderer from 'react-test-renderer';
-import { ensureExpectedIsNonNegativeInteger } from 'jest-matcher-utils';
 
 configure({ adapter: new Adapter() });
 
