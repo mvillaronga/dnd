@@ -6,7 +6,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { configure, mount } from 'enzyme';
 
 import {selectSpell, deselectSpell, clearSpellSelection} from '../../redux/spells'
-import {filterChange} from '../../redux/filter'
+import {filterChange, filterClear} from '../../redux/filter'
 
 import SpellSelectionPanel from '../SpellSelectionPanel'
 
@@ -82,5 +82,21 @@ describe('SpellSelectionPanel tests', () => {
     ip.getDOMNode().value = 'tmp_test'
     ip.simulate('change')
     expect(store.getActions()).toEqual([{type: filterChange.type, payload: 'tmp_test'}])
+  })
+
+  it('it should clear the filter when clicked', () => {
+    state.filter.name = 'filter'
+    const mockStore = configureMockStore([thunk])
+    const store = mockStore(state)
+    const comp = mount(
+      <Provider store={store}>
+        <SpellSelectionPanel />
+      </Provider>
+    )
+
+    comp.find('button').first().simulate('click')
+    expect(store.getActions()).toEqual([
+      {type: filterClear.type},
+    ])
   })
 })
