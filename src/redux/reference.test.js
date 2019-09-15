@@ -1,13 +1,14 @@
+import mockConsole from 'jest-mock-console';
+import fetchMock from 'fetch-mock'
+import thunk from 'redux-thunk'
+import configureMockStore from 'redux-mock-store'
+
 import referenceSlice,
 {
   requestSpellReference, invalidateSpellReference, receiveSpellReference,
   initialState,
   fetchSpellReference
 } from './reference'
-
-import fetchMock from 'fetch-mock'
-import thunk from 'redux-thunk'
-import configureMockStore from 'redux-mock-store'
 
 describe('reference reducers', () => {
   it('should return the initial state', () => {
@@ -89,11 +90,13 @@ describe('Reference async actions', () => {
         throws: new Error('Some No Good Error')
       })
 
+    const restoreConsole = mockConsole()
     const store = mockStore(initialState)
     return store.dispatch(fetchSpellReference()).then(() => {
       expect(store.getActions()).toEqual([
         { type: requestSpellReference.type }
       ])
+      restoreConsole()
     })
   })
 })
