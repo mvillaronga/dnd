@@ -1,5 +1,7 @@
 import React, { useRef } from 'react'
 
+import Button from '@material-ui/core/Button';
+
 const SpellFilter = ({filter, onFilterChange, onFilterClear}) => {
     const entry = useRef()
 
@@ -11,7 +13,7 @@ const SpellFilter = ({filter, onFilterChange, onFilterClear}) => {
         <div>
             Filter&nbsp;
             <input type="text" ref={entry} onChange={onChange} value={filter} />
-            {filter.length > 0 &&<button onClick={onFilterClear}>Clear</button>}
+            {filter.length > 0 &&<Button onClick={onFilterClear}>Clear</Button>}
         </div>
     )
 }

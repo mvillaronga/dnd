@@ -10,9 +10,11 @@ import spellSlice from './redux/spells'
 import filterSlice from './redux/filter'
 
 import { fetchSpellReference } from './redux/reference';
-
-import './index.css';
+import 'typeface-roboto';
+//import './index.css';
 import App from './App';
+
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const store = configureStore({
     reducer: {
@@ -28,6 +30,7 @@ store.dispatch(fetchSpellReference())
 
 ReactDOM.render(
     <Provider store={store}>
+        <CssBaseline />
         <App />
     </Provider>
     

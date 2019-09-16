@@ -8,6 +8,9 @@ import SpellFilter from '../SpellFilter'
 import SpellList from '../SpellList'
 import SpellSelected from '../SpellSelected'
 
+import Paper from '@material-ui/core/Paper';
+import { Header } from 'semantic-ui-react'
+
 const SpellSelectionPanel = () => {
     const dispatch = useDispatch()
 
@@ -43,14 +46,14 @@ const SpellSelectionPanel = () => {
     }
 
     return (
-    <div>
-        <h1>Spells</h1>
+    <Paper>
+        <Header as='h1'>Spells</Header>
         <hr />
         <SpellFilter onFilterChange={onFilterChange} filter={filter} onFilterClear={onFilterClear} />
         <hr />
         <SpellSelected selection={props.selection} onSpellDeselected={onSpellDeselected} onClearSelection={onClearSpellSelection} />
         <SpellList spells={props.spells} onSpellClicked={onSpellSelected} />
-    </div>
+    </Paper>
 )}
 
 export default SpellSelectionPanel

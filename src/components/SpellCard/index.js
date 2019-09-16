@@ -1,10 +1,12 @@
 import React from 'react'
 
+import Card from '@material-ui/core/Card'
+
 const SpellCard = ({name, level, onClick}) => {
 
-    return <div onClick={onClick} >
+    return <Card onClick={onClick} >
         {name} - {level}
-    </div>
+    </Card>
 }
 
 export default SpellCard
